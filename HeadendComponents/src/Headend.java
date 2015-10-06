@@ -4,6 +4,7 @@ import java.io.FileOutputStream;
 import java.io.FileWriter;
 import java.io.StringWriter;
 
+import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 
 public class Headend {
@@ -15,30 +16,25 @@ public class Headend {
 	private String[] desc = {"This is a music channel","This is natgeo","News"};
 	private FileOutputStream fos = null; 
 	private BufferedWriter bw;
-
-	Headend() {
-		
-
-	}
+	private JSONArray channels;
 
 	public void getChannelData() {
+		channels = new JSONArray();
 		
-
-		JSONObject objOuter = new JSONObject();
 		for (int i = 0; i < unique.length; i++) {
-			JSONObject objInner = new JSONObject();
-			objInner.put("unique", unique[i]);
-			objInner.put("name", name[i]);
-			objInner.put("url", url[i]);
-			objInner.put("desc", desc[i]);
-			objOuter.put(""+i, objInner);
+			JSONObject obj = new JSONObject();
+			obj.put("unique", unique[i]);
+			obj.put("name", name[i]);
+			obj.put("url", url[i]);
+			obj.put("desc", desc[i]);
+			channels.add(obj);
 		}
 
 
 
 		StringWriter out = new StringWriter();
 		try {
-			objOuter.writeJSONString(out);
+			channels.writeJSONString(out);
 			File file = new File("C:\\FTPUrl\\tv_info.json");
 
 			// if file doesnt exists, then create it
