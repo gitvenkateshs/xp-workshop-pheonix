@@ -1,25 +1,29 @@
 
 <HTML>
-<HEAD>
-<TITLE> TV Interface</TITLE>
-<script src="../js/UiFunction.js"></script>
-</HEAD>
-<BODY style="margin:0px;background:black;" onload="setup()">
-<div id="main_div" style="display:inline-block;width:80%;">
-<video id = "displayer" style="width:inherit" controls autoplay>
-  <source id="video_source" src="C:\Users\vnagamai\Desktop\videos\Serial Experiments Lain - 01 [By BahZell].mp4" type="video/mp4">
-Video should play
-</video></div>
-<div id="remote_int" style="display:inline-block;" >
-<div id="power_div"><input type="button" id="power" onclick="power_off()" value="OFF"/></div>
-<div id="volume_control"><button id="vol_up" onclick="vol_up()">VOLUME UP</button>
-<button id="vol_down" onclick="vol_down()">VOLUME DOWN</button></div>
-<div id="program_control"><button id="prog_up" onclick="prog_next()">PROGRAM UP</button>
-<button id="prog_down" onclick="prog_down()">PROGRAM DOWN</button></div>
-<div id="arrow_int" style="height=100%;width:20%"><button id="select">SELECT</button></div>
-</div>
-
-</BODY>
+	<HEAD>
+		<TITLE> TV Interface</TITLE>
+		<script src="../js/UiFunction.js"></script>
+	</HEAD>
+	<BODY style="margin:0px;background:black;" onload="setup()">
+		<div id="main_div" style="display:inline-block;width:80%;">
+			<video id = "displayer" style="width:inherit" controls autoplay>
+			 <!--  <source id="video_source" src="C:\Users\vnagamai\Desktop\videos\Serial Experiments Lain - 01 [By BahZell].mp4" type="video/mp4"> -->
+			 <source id="video_source" src="http://10.142.216.116:8080/Channels/MTV.mp4" type="video/mp4">
+			Video should play
+			</video></div>
+			<div id="remote_int" style="display:inline-block;" >
+			<div id ="power_div"><input id = "power" type="image" src="../../../../media/off.jpg" width="250", height="250" onclick="power_off()" value="OFF" /></div>
+			<br></br>
+			<div id="volume_control"><button id="vol_up" onclick="vol_up()">VOLUME UP</button>
+			<button id="vol_down" onclick="vol_down()">VOLUME DOWN</button></div>
+			<br></br>
+			<div id="program_control"><button id="prog_up" onclick="prog_next()">PROGRAM UP</button>
+			<button id="prog_down" onclick="prog_down()">PROGRAM DOWN</button></div>
+			<br></br>
+			<div id="arrow_int" style="height=100%;width:20%"><button id="select">SELECT</button></div>
+		</div>
+		
+	</BODY>
 
 
 </HTML>

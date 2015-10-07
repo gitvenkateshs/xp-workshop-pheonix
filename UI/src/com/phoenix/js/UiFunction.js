@@ -6,7 +6,8 @@
 	function setup(){
 		video = document.getElementById("displayer");
 		v_source = document.getElementById("video_source");
-		array_url=["../../../../media/Serial Experiments Lain - 01 [By BahZell].mp4","../../../../media/Serial Experiments Lain - 02 [By BahZell].mp4","../../../../media/Serial Experiments Lain - 03 [By BahZell].mp4"];
+		//array_url=["../../../../media/Serial Experiments Lain - 01 [By BahZell].mp4","../../../../media/Serial Experiments Lain - 02 [By BahZell].mp4","../../../../media/Serial Experiments Lain - 03 [By BahZell].mp4"];
+		array_url = ["http://10.142.216.116:8080/Channels/MTV.mp4", "http://10.142.216.116:8080/Channels/NATGEO.mp4", "http://10.142.216.116:8080/Channels/NEWS.mp4"];
 		array_index=0;
 	}	
 
@@ -43,7 +44,7 @@
 	function power_off(){
 		var power_tog = document.getElementById("main_div");
 		var power_text = document.getElementById("power");
-		power_text.value = "ON";
+		//power_text.value = "ON";
 		video.pause();
 //		video.setAttribute(display,"none");
 		location.href='off.html';
