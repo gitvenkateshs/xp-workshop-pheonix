@@ -12,8 +12,9 @@ public class Headend {
 	private boolean authStatus = false;
 	private int[] unique = {1,2,3};
 	private String[] name = {"mtv","natgeo","tv9"};
-	private String[] url = {"","",""};
+	private String[] url = {"http://10.142.216.116:8080/Channels/MTV.mp4","http://10.142.216.116:8080/Channels/NATGEO.mp4","http://10.142.216.116:8080/Channels/NEWS.mp4"};
 	private String[] desc = {"This is a music channel","This is natgeo","News"};
+	private String[] key = {"key1","key2","key3"};
 	private FileOutputStream fos = null; 
 	private BufferedWriter bw;
 	private JSONArray channels;
@@ -23,10 +24,13 @@ public class Headend {
 		
 		for (int i = 0; i < unique.length; i++) {
 			JSONObject obj = new JSONObject();
-			obj.put("unique", unique[i]);
-			obj.put("name", name[i]);
-			obj.put("url", url[i]);
-			obj.put("desc", desc[i]);
+			obj.put("CHANNELNO", unique[i]);
+			obj.put("CHANNELNAME", name[i]);
+			obj.put("TIME", "9:15AM");
+			obj.put("PROGRAMNAME", name[i]);
+			obj.put("PROGDESCRIPTION",desc[i]);
+			obj.put("URL", url[i]);
+			obj.put("SUBSCRIPTIONKEY", key[i]);
 			channels.add(obj);
 		}
 
@@ -47,10 +51,12 @@ public class Headend {
 			String jsonText = out.toString();
 			bw.write(jsonText);
 			bw.close();
+			System.out.println(jsonText);
 			
 			
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
+			System.out.println("Error");
 			e.printStackTrace();
 		}
 
